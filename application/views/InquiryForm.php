@@ -19,84 +19,76 @@
                         <?php echo form_open("InquiryForm/addInquiry",array("class"=>"form-validate","id"=>"form-user")); ?>
                             <div class="ans_block">
                                 <div class="col-md-2 col-sm-2">
-                                    <label class="pull-right mt-5">Your First Name</label>
+                                    <label class="pull-right mt-5"><span class="error_span">*</span> Your First Name</label>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="first_name" id="first_name" pattern="[a-zA-Z',&.$\ ]{2,100}"
-                                            maxlength="100" />
+                                        <input type="text" class="form-control" name="first_name" id="first_name" maxlength="50" />
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-sm-2">
-                                    <label class="pull-right mt-5">Your Last Name</label>
+                                    <label class="pull-right mt-5"><span class="error_span">*</span> Your Last Name</label>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="last_name" id="last_name" pattern="[a-zA-Z',&.$\ ]{2,100}"
-                                            maxlength="100" />
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                                <div class="col-md-2 col-sm-2">
-                                    <label class="pull-right mt-5">Your Email Address</label>
-                                </div>
-                                <div class="col-md-4 col-sm-4">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="email" id="email" pattern="[a-zA-Z',&.$\ ]{2,100}"
-                                            maxlength="100" />
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-sm-2">
-                                    <label class="pull-right mt-5">Your Contact Number</label>
-                                </div>
-                                <div class="col-md-4 col-sm-4">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="contact" id="contact" pattern="[a-zA-Z',&.$\ ]{2,100}"
-                                            maxlength="100" />
+                                        <input type="text" class="form-control" name="last_name" id="last_name" maxlength="50" />
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="col-md-2 col-sm-2">
-                                    <label class="pull-right mt-5">Your Company Name</label>
+                                    <label class="pull-right mt-5"><span class="error_span">*</span> Your Email Address</label>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="company_name" id="company_name" pattern="[a-zA-Z',&.$\ ]{2,100}"
-                                            maxlength="100"  />
+                                        <input type="text" class="form-control" name="email" id="email" maxlength="100" />
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-sm-2">
-                                    <label class="pull-right mt-5">Your Designation</label>
+                                    <label class="pull-right mt-5"><span class="error_span">*</span> Your Contact Number</label>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="designation" id="designation" pattern="[a-zA-Z',&.$\ ]{2,100}"
-                                            maxlength="100"  />
+                                        <input type="text" class="form-control" name="contact" id="contact" maxlength="10" />
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-md-2 col-sm-2">
+                                    <label class="pull-right mt-5"><span class="error_span">*</span> Your Company Name</label>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="company_name" id="company_name" maxlength="100"  />
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-2">
+                                    <label class="pull-right mt-5"><span class="error_span">*</span> Your Designation</label>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="designation" id="designation" maxlength="100"  />
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="col-md-2 col-sm-2">
                                     <label class="pull-right mt-5">Comments</label>
                                 </div>
-                                <div class="col-md-10 col-sm-10">
+                                <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
-                                        <textarea class="form-control" name="comments" id="comments" pattern="[a-zA-Z',&.$\ ]{2,100}"
-                                            maxlength="100"  /></textarea>
+                                        <textarea class="form-control" name="comments" id="comments" maxlength="500"></textarea>
                                     </div>
                                 </div>
-                                <div class="clearfix"></div>
-                                <div class="col-md-4 col-sm-4">
+                                <div class="col-md-2 col-sm-2">
                                     <label class="pull-right mt-5">How many times attended ATP event previously?</label>
                                 </div>
-                                <div class="col-md-8 col-sm-8">
+                                <div class="col-md-4 col-sm-4">
                                     <!-- <div class="form-group"> -->
                                         <!-- <div class="radio_box"> -->
                                             <input type="radio" name="attend" value="One" id="attend"/>
-                                            <label for="One">One</label>
+                                            <label for="One">One</label> <br>
                                             <input type="radio" name="attend" value="Two" id="attend"/>
-                                            <label for="Two">Two</label>
+                                            <label for="Two">Two</label> <br>
                                             <input type="radio" name="attend" value="More" id="attend"/>
-                                            <label for="More">More</label>
+                                            <label for="More">More</label> <br>
                                         <!-- </div> -->
                                     <!-- </div> -->
                                 </div>
