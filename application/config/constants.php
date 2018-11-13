@@ -89,7 +89,7 @@ define('ACTIVE_GROUP', 'default'); // database mode
 //define('ACTIVE_GROUP', 'QA'); // database mode
 //define('ACTIVE_GROUP', 'Production'); // database mode
 
-define('BASE_URL', 'http://localhost'); // Base URL - Local
+define('BASE_URL', 'http://localhost/I-ATP'); // Base URL - Local
 //define('BASE_URL', 'http://iatp.devbyopeneyes.com'); // Base URL - Development
 //define('BASE_URL', 'http://iatp.uatbyopeneyes.com'); // Base URL - QA
 //define('BASE_URL', 'http://iatp.uatbyopeneyes.com'); // Base URL - Production<?php

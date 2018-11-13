@@ -3,7 +3,7 @@
 <!-- Inner Section -->
 <div class="inner_banner">
     <img src="assets/images/inner_banner.jpg" alt="" class="img-responsive" />
-    <div class="innerbanner_text">HR QUESTIONNAIRE</div>
+    <div class="innerbanner_text">I-ATP</div>
 </div>
 <div class="clearfix"></div>
 <!-- End Inner Section -->
@@ -16,15 +16,15 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="clearfix"></div>
-                        <form class="form-validate" role="form">
+                        <?php echo form_open("InquiryForm/addInquiry",array("class"=>"form-validate","id"=>"form-user")); ?>
                             <div class="ans_block">
                                 <div class="col-md-2 col-sm-2">
                                     <label class="pull-right mt-5">Your First Name</label>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="" pattern="[a-zA-Z',&.$\ ]{2,100}"
-                                            maxlength="100" required />
+                                        <input type="text" class="form-control" name="first_name" id="first_name" pattern="[a-zA-Z',&.$\ ]{2,100}"
+                                            maxlength="100" />
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-sm-2">
@@ -32,8 +32,8 @@
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="" pattern="[a-zA-Z',&.$\ ]{2,100}"
-                                            maxlength="100" required />
+                                        <input type="text" class="form-control" name="last_name" id="last_name" pattern="[a-zA-Z',&.$\ ]{2,100}"
+                                            maxlength="100" />
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -42,8 +42,8 @@
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="" pattern="[a-zA-Z',&.$\ ]{2,100}"
-                                            maxlength="100" required />
+                                        <input type="text" class="form-control" name="email" id="email" pattern="[a-zA-Z',&.$\ ]{2,100}"
+                                            maxlength="100" />
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-sm-2">
@@ -51,8 +51,8 @@
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="" pattern="[a-zA-Z',&.$\ ]{2,100}"
-                                            maxlength="100" required />
+                                        <input type="text" class="form-control" name="contact" id="contact" pattern="[a-zA-Z',&.$\ ]{2,100}"
+                                            maxlength="100" />
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -61,8 +61,8 @@
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="" pattern="[a-zA-Z',&.$\ ]{2,100}"
-                                            maxlength="100" required />
+                                        <input type="text" class="form-control" name="company_name" id="company_name" pattern="[a-zA-Z',&.$\ ]{2,100}"
+                                            maxlength="100"  />
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-sm-2">
@@ -70,8 +70,8 @@
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="" pattern="[a-zA-Z',&.$\ ]{2,100}"
-                                            maxlength="100" required />
+                                        <input type="text" class="form-control" name="designation" id="designation" pattern="[a-zA-Z',&.$\ ]{2,100}"
+                                            maxlength="100"  />
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -80,8 +80,8 @@
                                 </div>
                                 <div class="col-md-10 col-sm-10">
                                     <div class="form-group">
-                                        <textarea class="form-control" name="" pattern="[a-zA-Z',&.$\ ]{2,100}"
-                                            maxlength="100" required /></textarea>
+                                        <textarea class="form-control" name="comments" id="comments" pattern="[a-zA-Z',&.$\ ]{2,100}"
+                                            maxlength="100"  /></textarea>
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -91,24 +91,25 @@
                                 <div class="col-md-8 col-sm-8">
                                     <!-- <div class="form-group"> -->
                                         <!-- <div class="radio_box"> -->
-                                            <input type="radio" name="attend" value="1" required/>
-                                            <label for="attend">1</label>
-                                            <input type="radio" name="attend" value="2" required/>
-                                            <label for="attend">2</label>
-                                            <input type="radio" name="attend" value="More" required/>
-                                            <label for="attend">More</label>
+                                            <input type="radio" name="attend" value="One" id="attend"/>
+                                            <label for="One">One</label>
+                                            <input type="radio" name="attend" value="Two" id="attend"/>
+                                            <label for="Two">Two</label>
+                                            <input type="radio" name="attend" value="More" id="attend"/>
+                                            <label for="More">More</label>
                                         <!-- </div> -->
                                     <!-- </div> -->
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
+                            <div class="col-md-4" id="error" style="color: red"></div>
                             <div class="clearfix"></div>
                             <div class="col-md-12">
                                 <div class="form-btn">
-                                    <button type="submit" class="lgn_btn margin_top"><span>Submit</span></button>
+                                    <button type="submit" class="lgn_btn margin_top" id="btn"><span>Submit</span></button>
                                 </div>
                             </div>
-                        </form>
+                            <?php echo form_close();?>
                     </div>
                 </div>
             </div>
@@ -120,3 +121,40 @@
 <!-- End Inner Section -->
 
 <?php include("footer.php"); ?>
+<script>
+$('#form-user').submit(function(e){
+	e.preventDefault();
+	$('#btn').prop('disabled', true);
+	//$('#loader').show(); 
+	$('.text-danger').remove();
+	var me=$(this);
+	$.ajax({
+		url:me.attr('action'),
+		type:'post',
+		data:me.serialize(),
+		dataType:'json',
+		success:function(response){
+			if(response.success == true){
+				$('#btn').prop('disabled', false);
+				//$('#loader').hide(); 
+				me.trigger("reset");
+				alert("Inquiry added successfully.Check your mail.");
+				location.href = '<?php echo $this->config->base_url(); ?>';
+			}
+			else if(response.success == 2){ 
+				$('#btn').prop('disabled', false);
+				//$('#loader').hide(); 
+				$('#error').html(response.message);
+			}
+			else{
+				$('#btn').prop('disabled', false);
+				//$('#loader').hide(); 
+				$.each(response.messages,function(key,value){
+					var element=$('#' + key);
+					element.after(value);
+				});
+			}
+		}
+	});
+});
+</script>
