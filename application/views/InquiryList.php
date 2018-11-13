@@ -76,9 +76,16 @@ $(document).ready(function() {
         $('#dataTables-example').dataTable({
         dom: 'Bfrtip',
         buttons: [
-            { extend: 'excel', className: 'excelButton' }
+            {
+							 extend: 'excel',
+							 title: 'Inquiry List',
+							 exportOptions: {
+							   columns: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+							   }
+							 },
         ]
     } );
+    $('.buttons-excel').attr('data-original-title', 'Export').tooltip();
         $('#dataTables-example_filter input').addClass('input-sm');
 
     } );

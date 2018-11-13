@@ -131,7 +131,7 @@ $('#form-user').submit(function(e){
 				//$('#loader').hide(); 
 				me.trigger("reset");
 				alert("Inquiry added successfully.Check your mail.");
-				location.href = '<?php echo $this->config->base_url(); ?>';
+				location.href = '<?php echo $this->config->base_url(); ?>'+'/ThankYou';
 			}
 			else if(response.success == 2){ 
 				$('#btn').prop('disabled', false);

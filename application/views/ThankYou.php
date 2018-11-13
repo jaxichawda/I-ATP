@@ -21,7 +21,7 @@
           <div class="clearfix"></div>
           <div class="form-btn">
             <a href="http://www.theopeneyes.com/"><button type="submit" class="lgn_btn"><span>Visit our Website</span></button></a>
-            <a routerLink=""><button type="submit" class="lgn_btn"><span>Close the Window</span></button></a>
+            <a href="<?php echo base_url().'InquiryForm';?>"><button type="submit" class="lgn_btn"><span>Close the Window</span></button></a>
           </div>
           </div>
         </div>
