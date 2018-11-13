@@ -73,7 +73,13 @@
 <?php include("footer.php"); ?>
 <script type="text/javascript">
 $(document).ready(function() {
-        $('#dataTables-example').dataTable();
-          $('#dataTables-example_filter input').addClass('input-sm');
+        $('#dataTables-example').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            { extend: 'excel', className: 'excelButton' }
+        ]
+    } );
+        $('#dataTables-example_filter input').addClass('input-sm');
+
     } );
 </script>
