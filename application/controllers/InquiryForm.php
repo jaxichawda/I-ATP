@@ -24,7 +24,7 @@ class InquiryForm extends CI_Controller {
         $this->form_validation->set_rules('designation', 'designation', 'required|alpha');
         $this->form_validation->set_rules('attend', 'attended ATP', 'required');
 
-        $this->form_validation->set_error_delimiters('<p class="text-danger" style="font-size:14px;">', '</p>');
+        $this->form_validation->set_error_delimiters('<p class="error_span">', '</p>');
         
         if($this->form_validation->run()){
         //$data['success']=true;
