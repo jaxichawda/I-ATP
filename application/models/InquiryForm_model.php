@@ -14,16 +14,17 @@ class InquiryForm_model extends CI_model{
                 </tr>
                 <tr>
                     <td style="padding:10px">
-                        <h1 style="font-family:Calibri,sans-serif;">Thank you for your enquiry</h1>
-                        <h3 style="font-family:Calibri,sans-serif;">Your message has been sent successfully.</h3>
+                        <p style="font-family:Calibri,sans-serif">Thank you for giving us the opportunity to present our product demo. It was pleasure having you at the I-ATP event.</p>
                         <p></p>
-                        <p style="font-family:Calibri,sans-serif">Thank you for your enquiry. It has been forwarded to the relevant department and will be dealt with as soon as possible. If your inquiry is urgent, please use the contact number provided in <a href="http://www.theopeneyes.com/">website</a>.</p>
+                        <p style="font-family:Calibri,sans-serif">For our products you can refer attached brochures. To have visual experience, you can visit <a href="http://lms-demo.theopneyes.com/">lms-demo.theopneyes.com</a>.</p>
                         <p></p>
-                        <p style="font-family:Calibri,sans-serif">Kindly,<br><strong>OpenEyes Technologies Inc.</strong></p>
+                        <p style="font-family:Calibri,sans-serif">In case of any queries or further information you may <a href="http://theopneyes.com/">reach out</a> to us.</p>
+                        <p></p>
+                        <p style="font-family:Calibri,sans-serif">Kindly,<br><strong>OpenEyes Software Solutions Pvt. Ltd</strong></p>
                     </td>
                 </tr>
                 <tr>
-                    <td style="background-color:#a6ce39; background:#a6ce39; color:#333; padding:10px; text-align:center">Copyright &copy; 2018 OpenEyes Technologies - All rights reserved.</td>
+                    <td padding:0;"><img src="http://iatp.devbyopeneyes.com/assets/images/footer.jpg" /></td>
                 </tr>
             </tbody>
         </table>';
@@ -48,7 +49,7 @@ class InquiryForm_model extends CI_model{
             $this->email->initialize($config); 
             $this->email->from('myopeneyes3937@gmail.com','ADMIN');
             $this->email->to($receiver);
-            $this->email->subject('Thank you for enquiry - OpenEyes Technologies Inc.');
+            $this->email->subject('Thank You for visiting us - OpenEyes Software Solutions Pvt. Ltd');
             $this->email->message($message);
             if($this->email->send()){
                 return true;
