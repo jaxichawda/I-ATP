@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="first_name" id="first_name" maxlength="50" pattern="[A-Za-z\/\s\.']{2,50}" required oninvalid="this.setCustomValidity('Please enter your valid Last Name')" oninput="setCustomValidity('')"/>
+                                        <input type="text" class="form-control" name="first_name" id="first_name" maxlength="50" />
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-sm-2">
