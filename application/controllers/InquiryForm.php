@@ -13,15 +13,27 @@ class InquiryForm extends CI_Controller {
 	{
 		$this->load->view('InquiryForm');
     }
+    public function customAlpha($str) 
+    {
+        if($str!=null){
+        if ( !preg_match('/^[a-z .,\-]+$/i',$str) )
+        {
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    }
     public function addInquiry(){
         $data=array('success'=>false,'message'=>array());
         $this->load->library('form_validation');
         $this->form_validation->set_rules('first_name', 'first name', 'required|alpha');
         $this->form_validation->set_rules('last_name', 'last name', 'required|alpha');
-        $this->form_validation->set_rules('email', 'email address', 'required|valid_email|is_unique[tblinquiries.Email]',array('is_unique' => 'This Email already exists.'));
-        $this->form_validation->set_rules('contact', 'contact no.', 'required|numeric|min_length[10]|max_length[10]|is_unique[tblinquiries.ContactNo]',array('is_unique' => 'This Contact is already exists.'));
-        $this->form_validation->set_rules('company_name', 'company name', 'required|alpha');
-        $this->form_validation->set_rules('designation', 'designation', 'required|alpha');
+        $this->form_validation->set_rules('email', 'email address', 'required|valid_email');
+        $this->form_validation->set_rules('contact', 'contact no.', 'required|numeric|min_length[10]|max_length[10]');
+        $this->form_validation->set_rules('company_name', 'company name', 'required|callback_customAlpha');
+        $this->form_validation->set_rules('designation', 'designation', 'required|callback_customAlpha');
         $this->form_validation->set_rules('attend', 'attended ATP', 'required');
 
         $this->form_validation->set_error_delimiters('<p class="error_span">', '</p>');
@@ -44,7 +56,7 @@ class InquiryForm extends CI_Controller {
                     $data['success']=true;
                 }
                 else{
-                    $data=array('success'=>2,'message'=>'Registration Failed!! Please try again.');
+                    $data=array('success'=>2,'message'=>'Something went wrong!! Please try again.');
                 }
             }
             
@@ -56,5 +68,6 @@ class InquiryForm extends CI_Controller {
         }
         echo json_encode($data);
     }
+    
 }
 ?>

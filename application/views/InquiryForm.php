@@ -77,21 +77,23 @@
                                         <textarea class="form-control" name="comments" id="comments" maxlength="500"></textarea>
                                     </div>
                                 </div>
+                               
                                 <div class="col-md-2 col-sm-2">
                                     <label class="pull-right mt-5">How many times attended ATP event previously?</label>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <!-- <div class="form-group"> -->
                                         <!-- <div class="radio_box"> -->
-                                            <input type="radio" name="attend" value="One" id="attend"/>
+                                            <input type="radio" name="attend" value="One"/>
                                             <label for="One">One</label> <br>
-                                            <input type="radio" name="attend" value="Two" id="attend"/>
+                                            <input type="radio" name="attend" value="Two"/>
                                             <label for="Two">Two</label> <br>
-                                            <input type="radio" name="attend" value="More" id="attend"/>
+                                            <input type="radio" name="attend" value="More"/>
                                             <label for="More">More</label> <br>
                                         <!-- </div> -->
                                     <!-- </div> -->
                                 </div>
+                                
                                 <div class="clearfix"></div>
                             </div>
                             <div class="col-md-4" id="error" style="color: red"></div>
@@ -118,7 +120,7 @@ $('#form-user').submit(function(e){
 	e.preventDefault();
 	$('#btn').prop('disabled', true);
 	//$('#loader').show(); 
-	$('.text-danger').remove();
+	$('.error_span').remove();
 	var me=$(this);
 	$.ajax({
 		url:me.attr('action'),
