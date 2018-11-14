@@ -52,7 +52,7 @@ class InquiryForm_model extends CI_model{
             $this->email->subject('Thank You for visiting us');
             $this->email->message($message);
             $this->email->attach('http://iatp.devbyopeneyes.com/assets/images/OSSlogo.png');
-            $this->email->attach('http://iatp.devbyopeneyes.com/assets/images/logo.png');
+            $this->email->attach('http://iatp.devbyopeneyes.com/I-ATP.zip');
             if($this->email->send()){
                 return true;
             }else{
