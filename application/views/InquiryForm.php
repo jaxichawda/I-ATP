@@ -85,6 +85,7 @@
                                             <label for="Never">Never</label>
                                         </div>
                                     </div>
+                                    <span id="radio_error"></span>
                                 </div>
                                
                                 <div class="col-md-2 col-sm-2">
@@ -102,7 +103,7 @@
                             <div class="clearfix"></div>
                             <div class="col-md-12">
                                 <div class="form-btn">
-                                    <button type="submit" class="lgn_btn margin_top" id="btn"><span>Stay connected</span></button>
+                                    <button type="submit" class="lgn_btn margin_top" id="btn"><span>Stay connected</span></button><img src="<?php echo base_url();?>assets/images/loader.gif" id="loader" width="30px" height="auto" style="margin-left:15px;display:none;">
                                 </div>
                             </div>
                             <?php echo form_close();?>
@@ -120,9 +121,19 @@
 <script>
 $('#form-user').submit(function(e){
 	e.preventDefault();
+     $('.error_span').remove();
+    //$('#radio_error').remove();
+    if ($('input[name="attend"]:checked').length == 0) {
+         $('#radio_error').text("Please select one option");
+         $('#radio_error').addClass('error_span_radio');
+    } else {
+        $('#radio_error').remove();
+    }
+        // return false; } 
 	$('#btn').prop('disabled', true);
-	//$('#loader').show(); 
-	$('.error_span').remove();
+    $('#btn').addClass('disabled');
+	$('#loader').show(); 
+	
 	var me=$(this);
 	$.ajax({
 		url:me.attr('action'),
@@ -132,7 +143,7 @@ $('#form-user').submit(function(e){
 		success:function(response){
 			if(response.success == true){
 				$('#btn').prop('disabled', false);
-				//$('#loader').hide(); 
+				$('#loader').hide(); 
 				me.trigger("reset");
                 // setTimeout(function() {
 				// 			swal({
@@ -149,12 +160,12 @@ $('#form-user').submit(function(e){
 			}
 			else if(response.success == 2){ 
 				$('#btn').prop('disabled', false);
-				//$('#loader').hide(); 
+				$('#loader').hide(); 
 				$('#error').html(response.message);
 			}
 			else{
 				$('#btn').prop('disabled', false);
-				//$('#loader').hide(); 
+				$('#loader').hide(); 
 				$.each(response.messages,function(key,value){
 					var element=$('#' + key);
 					element.after(value);

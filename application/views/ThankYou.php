@@ -3,7 +3,7 @@
 <!-- Inner Section -->
 <div class="inner_banner">
     <img src="assets/images/inner_banner.jpg" alt="" class="img-responsive" />
-    <div class="innerbanner_text">HR QUESTIONNAIRE</div>
+    <div class="innerbanner_text">OpenEyes Software Solutions Pvt. Ltd</div>
 </div>
 <div class="clearfix"></div>
 <!-- End Inner Section -->

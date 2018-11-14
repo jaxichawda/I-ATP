@@ -30,13 +30,13 @@ class InquiryForm extends CI_Controller {
         $this->load->library('form_validation');
         $this->form_validation->set_rules('first_name', 'first name', 'required|alpha');
         $this->form_validation->set_rules('last_name', 'last name', 'required|alpha');
-        $this->form_validation->set_rules('email', 'email address', 'required|valid_email');
-        $this->form_validation->set_rules('contact', 'contact no.', 'required|numeric|min_length[10]|max_length[10]');
+        $this->form_validation->set_rules('email', 'email address', 'required|valid_email|is_unique[tblinquiries.Email]',array('is_unique' => 'This Email already exists.'));
+        $this->form_validation->set_rules('contact', 'contact no.', 'required|numeric|min_length[10]|max_length[10]|is_unique[tblinquiries.ContactNo]',array('is_unique' => 'This Contact already exists.'));
         $this->form_validation->set_rules('company_name', 'company name', 'required|callback_customAlpha');
         $this->form_validation->set_rules('designation', 'designation', 'required|callback_customAlpha');
-        $this->form_validation->set_rules('attend', 'attended ATP', 'required');
+       // $this->form_validation->set_rules('attend', 'attended ATP', 'required');
 
-        $this->form_validation->set_error_delimiters('<p class="error_span">', '</p>');
+        $this->form_validation->set_error_delimiters('<span class="error_span">', '</span>');
         
         if($this->form_validation->run()){
         //$data['success']=true;
