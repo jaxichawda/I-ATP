@@ -50,7 +50,14 @@
                     <td><?php if($row->Comments != null){echo $row->Comments;}else{echo "No Comments";}?></td>  
                     </tr>  
                 <?php }  
+                if($h->result()==null){
                 ?>  
+                <tr>
+                  <td colspan="8" class="text-center">There is no record found</td>
+                </tr>
+                <?php
+                }
+                ?>
                     <!-- <td>
                       <div class="inline_delbtn tooltip_inline" data-placement="bottom" title="Print HR Questionnaire Form">
                         <button class="btn btn-suucess btn-rounded btn-sm edit-user-row-with-ajax-button" (click)="viewCandidate(candidate.CandidateId)"><i
