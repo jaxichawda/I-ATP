@@ -75,14 +75,15 @@
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
                                         <div class="radio_box">
-                                            <input type="radio" name="attend" value="One" id="One" />
+                                            <input type="radio" name="attend" value="One" id="One" require/>
                                             <label for="One">One</label> 
-                                            <input type="radio" name="attend" value="Two" id="Two"/>
+                                            <input type="radio" name="attend" value="Two" id="Two" require/>
                                             <label for="Two">Two</label> 
-                                            <input type="radio" name="attend" value="More" id="More"/>
+                                            <input type="radio" name="attend" value="More" id="More" require/>
                                             <label for="More">More</label> 
                                         </div>
                                     </div>
+                                    <span id="radio_error"></span>
                                 </div>
                                
                                 <div class="col-md-2 col-sm-2">
@@ -118,9 +119,18 @@
 <script>
 $('#form-user').submit(function(e){
 	e.preventDefault();
+     $('.error_span').remove();
+    //$('#radio_error').remove();
+    if ($('input[name="attend"]:checked').length == 0) {
+         $('#radio_error').text("Please select one option");
+         $('#radio_error').addClass('error_span_radio');
+    } else {
+        $('#radio_error').remove();
+    }
+        // return false; } 
 	$('#btn').prop('disabled', true);
 	//$('#loader').show(); 
-	$('.error_span').remove();
+	
 	var me=$(this);
 	$.ajax({
 		url:me.attr('action'),

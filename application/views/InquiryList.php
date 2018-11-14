@@ -87,6 +87,5 @@ $(document).ready(function() {
     } );
     $('.buttons-excel').attr('data-original-title', 'Export').tooltip();
         $('#dataTables-example_filter input').addClass('input-sm');
-
     } );
 </script>
