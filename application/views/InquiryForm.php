@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="first_name" id="first_name" maxlength="50" />
+                                        <input type="text" class="form-control" name="first_name" id="first_name" maxlength="50" pattern="[A-Za-z\/\s\.']{2,50}" required oninvalid="this.setCustomValidity('Please enter your valid Last Name')" oninput="setCustomValidity('')"/>
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-sm-2">
@@ -70,27 +70,27 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="col-md-2 col-sm-2">
+                                    <label class="pull-right mt-5" style="text-align:right;"><span class="error_span">*</span> How many times attended ATP event previously?</label>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <div class="radio_box">
+                                            <input type="radio" name="attend" value="One" id="One" />
+                                            <label for="One">One</label> 
+                                            <input type="radio" name="attend" value="Two" id="Two"/>
+                                            <label for="Two">Two</label> 
+                                            <input type="radio" name="attend" value="More" id="More"/>
+                                            <label for="More">More</label> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-2">
                                     <label class="pull-right mt-5">Comments</label>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
                                         <textarea class="form-control" name="comments" id="comments" maxlength="500"></textarea>
                                     </div>
-                                </div>
-                                <div class="col-md-2 col-sm-2">
-                                    <label class="pull-right mt-5">How many times attended ATP event previously?</label>
-                                </div>
-                                <div class="col-md-4 col-sm-4">
-                                    <!-- <div class="form-group"> -->
-                                        <!-- <div class="radio_box"> -->
-                                            <input type="radio" name="attend" value="One" id="attend"/>
-                                            <label for="One">One</label> <br>
-                                            <input type="radio" name="attend" value="Two" id="attend"/>
-                                            <label for="Two">Two</label> <br>
-                                            <input type="radio" name="attend" value="More" id="attend"/>
-                                            <label for="More">More</label> <br>
-                                        <!-- </div> -->
-                                    <!-- </div> -->
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -130,8 +130,18 @@ $('#form-user').submit(function(e){
 				$('#btn').prop('disabled', false);
 				//$('#loader').hide(); 
 				me.trigger("reset");
-				alert("Inquiry added successfully.Check your mail.");
-				location.href = '<?php echo $this->config->base_url(); ?>'+'/ThankYou';
+                setTimeout(function() {
+							swal({
+								title: "Thank You",
+								type: "success",
+								showConfirmButton: false,
+								timer: 4000,
+							}, function() {
+								window.location = "";
+							});
+						}, 0);
+				//alert("Inquiry added successfully.Check your mail.");
+				location.href = '<?php echo $this->config->base_url(); ?>'+'ThankYou';
 			}
 			else if(response.success == 2){ 
 				$('#btn').prop('disabled', false);
