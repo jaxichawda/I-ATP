@@ -16,6 +16,23 @@
 <!-- End Footer -->
 
 <!-- Start Scripts -->
+<script>
+setTimeout(function(){
+			if ($("body").height() < $(window).height()) {  
+				$('footer').addClass('footer_fixed');     
+		}      
+		else{  
+				$('footer').removeClass('footer_fixed');    
+		}
+	  },100);
+	  $('body').tooltip({
+			selector: '[data-toggle="tooltip"], [title]:not([data-toggle="popover"])',
+			trigger: 'hover',
+			container: 'body'
+			}).on('click mousedown mouseup', '[data-toggle="tooltip"], [title]:not([data-toggle="popover"])', function () {
+			$('[data-toggle="tooltip"], [title]:not([data-toggle="popover"])').tooltip('destroy');
+			});
+</script>
 <script src="assets/js/jquery-1.11.3.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/custom.js"></script>
