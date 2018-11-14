@@ -101,7 +101,7 @@
                             <div class="clearfix"></div>
                             <div class="col-md-12">
                                 <div class="form-btn">
-                                    <button type="submit" class="lgn_btn margin_top" id="btn"><span>Submit</span></button>
+                                    <button type="submit" class="lgn_btn margin_top" id="btn"><span>Submit</span></button><img src="<?php echo base_url();?>assets/images/loader.gif" id="loader" width="30px" height="auto" style="margin-left:15px;display:none;">
                                 </div>
                             </div>
                             <?php echo form_close();?>
@@ -129,7 +129,8 @@ $('#form-user').submit(function(e){
     }
         // return false; } 
 	$('#btn').prop('disabled', true);
-	//$('#loader').show(); 
+    $('#btn').addClass('disabled');
+	$('#loader').show(); 
 	
 	var me=$(this);
 	$.ajax({
@@ -140,7 +141,7 @@ $('#form-user').submit(function(e){
 		success:function(response){
 			if(response.success == true){
 				$('#btn').prop('disabled', false);
-				//$('#loader').hide(); 
+				$('#loader').hide(); 
 				me.trigger("reset");
                 setTimeout(function() {
 							swal({
@@ -157,12 +158,12 @@ $('#form-user').submit(function(e){
 			}
 			else if(response.success == 2){ 
 				$('#btn').prop('disabled', false);
-				//$('#loader').hide(); 
+				$('#loader').hide(); 
 				$('#error').html(response.message);
 			}
 			else{
 				$('#btn').prop('disabled', false);
-				//$('#loader').hide(); 
+				$('#loader').hide(); 
 				$.each(response.messages,function(key,value){
 					var element=$('#' + key);
 					element.after(value);
