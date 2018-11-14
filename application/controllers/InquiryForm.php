@@ -16,8 +16,22 @@ class InquiryForm extends CI_Controller {
     public function customAlpha($str) 
     {
         if($str!=null){
-        if ( !preg_match('/^[a-z .,\-]+$/i',$str) )
+        if ( !preg_match("/^[0-9a-zA-Z-'&\s]+$/i",$str) )
         {
+            $this->form_validation->set_message('customAlpha','Please enter your valid Company Name');
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    }
+    public function customAlpha1($str) 
+    {
+        if($str!=null){
+        if ( !preg_match("/^[0-9a-zA-Z-'&\s]+$/i",$str) )
+        {
+            $this->form_validation->set_message('customAlpha1','Please enter your valid Designation');
             return false;
         }
         else{
@@ -28,12 +42,13 @@ class InquiryForm extends CI_Controller {
     public function addInquiry(){
         $data=array('success'=>false,'message'=>array());
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('first_name', 'first name', 'required|alpha');
-        $this->form_validation->set_rules('last_name', 'last name', 'required|alpha');
-        $this->form_validation->set_rules('email', 'email address', 'required|valid_email|is_unique[tblinquiries.Email]',array('is_unique' => 'This Email already exists.'));
-        $this->form_validation->set_rules('contact', 'contact no.', 'required|numeric|min_length[10]|max_length[10]|is_unique[tblinquiries.ContactNo]',array('is_unique' => 'This Contact already exists.'));
-        $this->form_validation->set_rules('company_name', 'company name', 'required|callback_customAlpha');
-        $this->form_validation->set_rules('designation', 'designation', 'required|callback_customAlpha');
+        $this->form_validation->set_rules('first_name', 'first name', 'required|alpha', array('required' => 'Please enter your First Name','alpha' => 'Please enter your valid First Name'));
+        $this->form_validation->set_rules('last_name', 'last name', 'required|alpha', array('required' => 'Please enter your Last Name','alpha' => 'Please enter your valid Last Name'));
+        $this->form_validation->set_rules('email', 'email address', 'required|valid_email|is_unique[tblinquiries.Email]',array('required' => 'Please enter your Email Address','is_unique' => 'This Email Address submitted this form'));
+        $this->form_validation->set_rules('contact', 'contact no.', 'required|numeric|min_length[10]|max_length[10]|is_unique[tblinquiries.ContactNo]',array('is_unique' => 'This Contact Number submitted this form', 'required' => 'Please enter your Contact Number', 'numeric' => 'Please enter your valid Contact Number', 'min_length[10]' => 'Please enter your valid Contact Number', 'max_length[10]' => 'Please enter your valid Contact Number'));
+        $this->form_validation->set_rules('company_name', 'company name', 'required|callback_customAlpha', array('required' => 'Please enter your Company Name'));
+        $this->form_validation->set_rules('designation', 'designation', 'required|callback_customAlpha1', array('required' => 'Please enter your Designation'));
+        $this->form_validation->set_message('validate_member','Member is not valid!');
        // $this->form_validation->set_rules('attend', 'attended ATP', 'required');
 
         $this->form_validation->set_error_delimiters('<span class="error_span">', '</span>');
