@@ -2,7 +2,7 @@
 <footer>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-sm-6 text-left">Copyrights &copy; 2018 <a href="http://theopeneyes.com/" target="_blank">OpenEyes Software Solutions</a></div>
+			<div class="col-md-6 col-sm-6 text-left">Copyrights &copy; 2018 <a href="http://theopeneyes.com/" target="_blank">OpenEyes Software Solutions Pvt. Ltd</a></div>
 			<div class="col-md-6 col-sm-6 text-right">
 				<ul class="social_links">
 					<li><a href="https://twitter.com/OpenEyesTech" target="_blank"><i class="flaticon-twitter-logo-silhouette" aria-hidden="true"></i></a></li>

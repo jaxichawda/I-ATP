@@ -5,7 +5,7 @@
     <div class="row">
       <!--  page header -->
       <div class="col-lg-12">
-        <h1 class="page-header pull-left">List of Inquiries</h1>
+        <h1 class="page-header pull-left">I-ATP 2018 attendees list</h1>
         <div class="btn-group pull-right add-right">
         </div>
         <div class="clearfix"></div>
@@ -43,9 +43,9 @@
                     <td><?php echo $i;?></td>
                     <td><?php echo $row->FirstName." ".$row->LastName;?></td>  
                     <td><?php echo $row->Email;?></td>  
+                    <td><?php echo $row->ContactNo;?></td>  
                     <td><?php echo $row->CompanyName;?></td>  
                     <td><?php echo $row->Designation;?></td>  
-                    <td><?php echo $row->ContactNo;?></td>  
                     <td><?php echo $row->AttendedATP;?></td>  
                     <td><?php if($row->Comments != null){echo $row->Comments;}else{echo "No Comments";}?></td>  
                     </tr>  

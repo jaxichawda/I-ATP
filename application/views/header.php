@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>OpenEyes - HR Questionnaire</title>
+  <title>OpenEyes Software Solutions Pvt. Ltd</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -34,8 +34,8 @@
 			<div class="col-md-9 col-sm-10 col-xs-12">
 				<div class="header_address">
 					<div class="address"><i class="flaticon-placeholder" aria-hidden="true"></i><span><strong>Suite #405, Iscon Atria 1,</strong><br>Gotri Road, Vadodara 390021</span></div>
-					<div class="address"><i class="flaticon-smartphone" aria-hidden="true"></i><span><strong>Call Us Now</strong><br><a href="tel:997.881.3937">997.881.EYES (3937)</a></span></div>
-					<div class="address"><i class="flaticon-mail" aria-hidden="true"></i><span><strong>Send Us Email</strong><br><a href="mailto:hr@theopeneyes.com">hr@theopeneyes.com</a></span></div>
+					<div class="address"><i class="flaticon-smartphone" aria-hidden="true"></i><span><strong>Call Us Now</strong><br><a href="tel:+91 265.298.3937">+91 265.298.EYES (3937)</a></span></div>
+					<div class="address"><i class="flaticon-mail" aria-hidden="true"></i><span><strong>Send Us Email</strong><br><a href="mailto:info@theopeneyes.com">info@theopeneyes.com</a></span></div>
 				</div>
 			</div>
 			<!-- End Header Address -->

@@ -3,7 +3,7 @@
 <!-- Inner Section -->
 <div class="inner_banner">
     <img src="assets/images/inner_banner.jpg" alt="" class="img-responsive" />
-    <div class="innerbanner_text">I-ATP</div>
+    <div class="innerbanner_text">Your information</div>
 </div>
 <div class="clearfix"></div>
 <!-- End Inner Section -->
@@ -19,7 +19,7 @@
                         <?php echo form_open("InquiryForm/addInquiry",array("class"=>"form-validate","id"=>"form-user")); ?>
                             <div class="ans_block">
                                 <div class="col-md-2 col-sm-2">
-                                    <label class="pull-right mt-5"><span class="error_span">*</span> Your First Name</label>
+                                    <label class="pull-right mt-5"><span class="error_span">*</span> First Name</label>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
@@ -27,7 +27,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-sm-2">
-                                    <label class="pull-right mt-5"><span class="error_span">*</span> Your Last Name</label>
+                                    <label class="pull-right mt-5"><span class="error_span">*</span> Last Name</label>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
@@ -36,7 +36,7 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="col-md-2 col-sm-2">
-                                    <label class="pull-right mt-5"><span class="error_span">*</span> Your Email Address</label>
+                                    <label class="pull-right mt-5"><span class="error_span">*</span> Email Address</label>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
@@ -44,7 +44,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-sm-2">
-                                    <label class="pull-right mt-5"><span class="error_span">*</span> Your Contact Number</label>
+                                    <label class="pull-right mt-5"><span class="error_span">*</span> Contact Number</label>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="col-md-2 col-sm-2">
-                                    <label class="pull-right mt-5"><span class="error_span">*</span> Your Company Name</label>
+                                    <label class="pull-right mt-5"><span class="error_span">*</span> Company Name</label>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
@@ -61,7 +61,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-sm-2">
-                                    <label class="pull-right mt-5"><span class="error_span">*</span> Your Designation</label>
+                                    <label class="pull-right mt-5"><span class="error_span">*</span> Designation</label>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
@@ -75,12 +75,14 @@
                                 <div class="col-md-4 col-sm-4">
                                     <div class="form-group">
                                         <div class="radio_box">
-                                            <input type="radio" name="attend" value="One" id="One" />
-                                            <label for="One">One</label> 
-                                            <input type="radio" name="attend" value="Two" id="Two"/>
-                                            <label for="Two">Two</label> 
+                                            <input type="radio" name="attend" value="Once" id="Once" />
+                                            <label for="Once">Once</label> 
+                                            <input type="radio" name="attend" value="Twice" id="Twice"/>
+                                            <label for="Twice">Twice</label> 
                                             <input type="radio" name="attend" value="More" id="More"/>
-                                            <label for="More">More</label> 
+                                            <label for="More">More</label>
+                                            <input type="radio" name="attend" value="Never" id="Never" />
+                                            <label for="Never">Never</label>
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +102,7 @@
                             <div class="clearfix"></div>
                             <div class="col-md-12">
                                 <div class="form-btn">
-                                    <button type="submit" class="lgn_btn margin_top" id="btn"><span>Submit</span></button>
+                                    <button type="submit" class="lgn_btn margin_top" id="btn"><span>Stay connected</span></button>
                                 </div>
                             </div>
                             <?php echo form_close();?>
@@ -132,16 +134,16 @@ $('#form-user').submit(function(e){
 				$('#btn').prop('disabled', false);
 				//$('#loader').hide(); 
 				me.trigger("reset");
-                setTimeout(function() {
-							swal({
-								title: "Thank You",
-								type: "success",
-								showConfirmButton: false,
-								timer: 4000,
-							}, function() {
-								window.location = "";
-							});
-						}, 0);
+                // setTimeout(function() {
+				// 			swal({
+				// 				title: "Thank You",
+				// 				type: "success",
+				// 				showConfirmButton: false,
+				// 				timer: 4000,
+				// 			}, function() {
+				// 				window.location = "";
+				// 			});
+				// 		}, 0);
 				//alert("Inquiry added successfully.Check your mail.");
 				location.href = '<?php echo $this->config->base_url(); ?>'+'ThankYou';
 			}
