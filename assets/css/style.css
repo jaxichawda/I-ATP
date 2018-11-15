@@ -275,4 +275,6 @@ div.dt-buttons{float:left!important;}
 }
 @media (max-width:400px){
 	.inner_banner .innerbanner_text{ padding: 10% 0 0 0;}
+	footer .header_address .address{width:200px;}
+	footer .header_address .address{padding:0px;margin:0px;}
 }
