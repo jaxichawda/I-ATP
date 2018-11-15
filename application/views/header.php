@@ -25,13 +25,13 @@
 	<div class="container">
 		<div class="row">
 			<!-- Logo -->
-			<div class="col-md-3 col-sm-2 col-xs-12">
+			<div class="col-md-2 col-sm-2 col-xs-12">
 				<div class="logo"> <a href="http://theopeneyes.com/" target="_blank"><img src="assets/images/OSSlogo.png" alt="OpenEyes Software Solutions" title="OpenEyes Software Solutions" class="img-responsive tooltip_inline" data-placement="bottom" /></a> </div>
 			</div>
 			<!-- End Logo -->
 
 			<!-- Header Address -->
-			<div class="col-md-9 col-sm-10 col-xs-12">
+			<div class="col-md-10 col-sm-10 col-xs-12">
 				<div class="header_address">
 					<div class="address"><i class="flaticon-placeholder" aria-hidden="true"></i><span><strong>Suite #405, Iscon Atria 1,</strong><br>Gotri Road, Vadodara 390021</span></div>
 					<div class="address"><i class="flaticon-smartphone" aria-hidden="true"></i><span><strong>Call Us Now</strong><br><a href="tel:+91 265.298.3937">+91 265.298.EYES (3937)</a></span></div>

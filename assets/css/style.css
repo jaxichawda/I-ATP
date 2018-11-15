@@ -35,7 +35,7 @@ header .header_address .address span strong { font-weight: 500; color: #111111; 
 header .header_address .address span a{color: #777777;}
 header .header_address .address span a:hover{color: #0061AF;}
 header.header_fixed .logo a{width:65px;}
-header.header_fixed .menu,header.header_fixed .top_header,header.header_fixed .header_address{ display: none;}
+/* header.header_fixed .menu,header.header_fixed .top_header,header.header_fixed .header_address{ display: none;} */
 header.header_fixed{position: fixed; background:rgba(242,242,242,0.95); transition:all 0.3s ease-in 0s; border-bottom: 2px solid #eee;}
 form .hr_form_wrapper .back_btn{color:#fff!important; text-transform:uppercase; font-size:18px; padding:10px 20px!important;  font-weight:400; background: #0061AF; line-height: 18px;margin:32px 0px 0px 0px;}
 header.header_fixed .back_btn{margin:18px 0px;}
@@ -89,7 +89,10 @@ button[disabled]{cursor: no-drop;opacity: 0.85!important;}
 /*--------------End Header and Navigation--------------------*/
 
 /* ------- Inner Pages Contener Area Strat ------- */
-.inner_content{background: #f9f9f9;padding: 45px 0px 45px 0px;overflow: hidden;width: 100%;position: relative;}
+.table-list{padding:25px 0px!important;}
+.table-list .page_content{display: table;max-width: 100%;padding: 0px;width: 100%;}
+.table-list #page-wrapper{padding: 25px 0;height: var(--screen-height);vertical-align: middle;display: table-cell;position: relative;width: inherit;}
+.inner_content{background: #f9f9f9;padding: 0px 0px 0px 0px;overflow: hidden;width: 100%;position: relative;}
 select {-moz-appearance: none!important;-webkit-appearance: none!important;background:#fff url("../images/arrow-down-b.png") no-repeat scroll right top / 31px auto!important; border: 1px solid #ccc!important; color: #555!important; height: 34px!important; border-radius:4px!important; padding: 3px 35px 2px 5px!important; width: 100%!important; font-family: 'Titillium Web', sans-serif; font-size:14px!important;}
 select option{ background:#f4f4f4!important; padding:7px!important; color:#555!important; font-size:14px!important; text-transform:capitalize!important; display:block!important; width:100%!important; transition:all 0.2s linear 0s!important; border:0!important; border-bottom:1px solid #ccc!important; font-family: 'Titillium Web', sans-serif;}
 .form-group label{line-height:15px; color: #2d5c8a; font-size: 14px; font-family: 'Titillium Web', sans-serif; font-weight:normal;}
@@ -154,7 +157,7 @@ footer.register_footer a:hover{color:#111; }
 .inner_banner::before { background: #f9f9f9; bottom: -50px; content: ""; height: 100px; left: -10px; position: absolute; transform: rotate(5deg); width: 51%; z-index: 99;}
 .inner_banner::after { background: #f9f9f9; bottom: -50px; content: ""; height: 100px; right: -10px; position: absolute; transform: rotate(-5deg); width: 51%;  z-index: 99;}
 .inner_banner img{width: 100%; display: block; opacity: 0.15;}
-.inner_banner .innerbanner_text{padding: 5% 0 0 0; text-align: center; position: absolute; top:0; left: 0; width: 100%; color: #fff; font-size: 40px; font-weight: 600; text-transform: uppercase;}
+.inner_banner .innerbanner_text{padding: 5% 0 0 0; text-align: center; position: absolute; top:0; left: 0; width: 100%; color: #fff; font-size: 40px; font-weight: 600; text-transform: capitalize;}
 .inner_banner .innerbanner_text span{display: block; color: #fff; font-size: 20px; text-transform: capitalize; font-weight: normal;}
 .inner_banner .innerbanner_text span a,.inner_banner .innerbanner_text span i{color: #fff;font-style: normal;}
 /*-------------End Inner Banner----------------------*/
@@ -208,16 +211,33 @@ table.dataTable.no-footer {border-bottom: 0px!important;}
 	.inner_banner .innerbanner_text span{font-size: 17px;}
 	.inner_banner .innerbanner_text{font-size: 30px;}
 }
+@media (min-width:768px) and (max-width:991px){
+	header .header_address .address span, header .header_address .address span strong {font-size: 13px;}
+	header .header_address .address {padding: 0 5px 0 0;margin: 0 5px 0 0;}		
+	footer .footer-left{font-size:13px;}
+	.container {max-width: 100%;}
+	label{font-size:12px;}
+	.inner_content label.atp_title,.inner_content label.pull-right{text-align:left!important;float: left !important;}	
+}
 @media (min-width:768px) and (max-width:1024px){
 	.inner_banner .innerbanner_text{padding:8% 0 0 0;}
 }
 @media (max-width:767px){
-    header .header_address,header .social_links{display: none;}
+    /* header .header_address,header .social_links{display: none;} */
     header.header_fixed{position: relative; background: #fff; border: 0;}
-    footer .text-left,footer .text-right{text-align: center; line-height: 22px;}
+    footer .text-left,footer .text-right{text-align: center; line-height: 22px;font-size:12px;}
 	footer .social_links{margin-top: 10px;}
 	#page-wrapper .panel-default label{float:none;}
 	label{float:left;}
+	footer.footer_fixed{position:relative;}
+	header .logo{text-align:center;}
+	header .header_address {padding: 15px 0 15px 0;font-size: 12px;text-align: center;float:none;}
+	header .header_address .address {padding: 0 10px 0 0;margin: 0 10px 0 0;}
+	header .header_address .address span, header .header_address .address span strong{font-size:12px;}
+	.inner_content label.atp_title.mt-5{margin-right:20px;}
+	.inner_content label.atp_title,.inner_content label.pull-right{text-align:left!important;float: left !important;}	
+	.table-list .page_content{display: block;max-width: 100%;padding: 0px;width: 100%;}
+	.table-list #page-wrapper{padding: 25px 0;height: auto;display:block;position: relative;width: 100%;}
 }
 @media (max-width:768px){	
 	.inner_content .inner_block .que_img{margin: -26px auto 0px auto;display: table;}
@@ -225,12 +245,19 @@ table.dataTable.no-footer {border-bottom: 0px!important;}
 	.separator.text-center {margin: 0 auto 35px;}
 	.inner_content .inner_block{text-align:center;}
 	.inner_content .inner_block .que_block,.inner_content .inner_block .ans_block{padding: 10px 20px;}
-}
-@media (max-width:740px){
-	footer.footer_fixed{position:relative;}
+
 }
 @media (max-width:640px){
 	.inner_banner .innerbanner_text {font-size: 18px;}
+	header .header_address{display:none;}
+	.inner_banner{height:150px;}
+	.dataTables_wrapper .dataTables_filter {
+    margin-top: 0!important;
+}
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter {
+    float: right!important;
+}
+div.dt-buttons{float:left!important;}
 }
 @media (max-width:500px){
 	.inner_banner img{width: auto; height: 100%;}
