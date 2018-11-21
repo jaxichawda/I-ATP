@@ -51,9 +51,9 @@ class InquiryForm_model extends CI_model{
             $this->email->to($receiver);
             $this->email->subject('Thank You for visiting us');
             $this->email->message($message);
-            $this->email->attach('http://iatp.devbyopeneyes.com/assets/brochure/lms-min.pdf');
-            $this->email->attach('http://iatp.devbyopeneyes.com/assets/brochure/project-product-min.pdf');
-            $this->email->attach('http://iatp.devbyopeneyes.com/assets/brochure/brochure-OESS-compressed.pdf');
+            // $this->email->attach('http://iatp.devbyopeneyes.com/assets/brochure/lms-min.pdf');
+            // $this->email->attach('http://iatp.devbyopeneyes.com/assets/brochure/project-product-min.pdf');
+            // $this->email->attach('http://iatp.devbyopeneyes.com/assets/brochure/brochure-OESS-compressed.pdf');
             if($this->email->send()){
                 return true;
             }else{

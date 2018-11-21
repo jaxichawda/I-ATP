@@ -13,12 +13,12 @@ class InquiryForm extends CI_Controller {
 	{
 		$this->load->view('InquiryForm');
     }
-    public function customAlpha($str) 
+    public function validFirstname($str) 
     {
         if($str!=null){
-        if ( !preg_match("/^[0-9a-zA-Z-'&\s]+$/i",$str) )
+        if ( !preg_match("/^[a-zA-Z-'.&\s]{2,}+$/i",$str) )
         {
-            $this->form_validation->set_message('customAlpha','Please enter your valid Company Name');
+            $this->form_validation->set_message('validFirstname','Please enter valid First Name');
             return false;
         }
         else{
@@ -26,12 +26,51 @@ class InquiryForm extends CI_Controller {
         }
     }
     }
-    public function customAlpha1($str) 
+    public function validLastname($str) 
     {
         if($str!=null){
-        if ( !preg_match("/^[0-9a-zA-Z-'&\s]+$/i",$str) )
+        if ( !preg_match("/^[a-zA-Z-'.&\s]{2,}+$/i",$str) )
         {
-            $this->form_validation->set_message('customAlpha1','Please enter your valid Designation');
+            $this->form_validation->set_message('validLastname','Please enter valid Last Name');
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    }
+    public function validContact($str) 
+    {
+        if($str!=null){
+        if ( !preg_match("/^[0-9]{10}+$/i",$str) )
+        {
+            $this->form_validation->set_message('validContact','Please provide valid Mobile Number');
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    }
+    public function validOrganization($str) 
+    {
+        if($str!=null){
+        if ( !preg_match("/^[a-zA-Z-'.&\s]{2,}+$/i",$str) )
+        {
+            $this->form_validation->set_message('validOrganization','Please enter valid Organization Name');
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    }
+    public function validDesignation($str) 
+    {
+        if($str!=null){
+        if ( !preg_match("/^[a-zA-Z-'.&\s]{2,}+$/i",$str) )
+        {
+            $this->form_validation->set_message('validDesignation','Please enter valid Designation');
             return false;
         }
         else{
@@ -42,12 +81,12 @@ class InquiryForm extends CI_Controller {
     public function addInquiry(){
         $data=array('success'=>false,'message'=>array());
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('first_name', 'first name', 'required|alpha', array('required' => 'Please enter your First Name','alpha' => 'Please enter your valid First Name'));
-        $this->form_validation->set_rules('last_name', 'last name', 'required|alpha', array('required' => 'Please enter your Last Name','alpha' => 'Please enter your valid Last Name'));
-        $this->form_validation->set_rules('email', 'email address', 'required|valid_email|is_unique[tblinquiries.Email]',array('required' => 'Please enter your Email Address','is_unique' => 'This Email Address submitted this form'));
-        $this->form_validation->set_rules('contact', 'contact no.', 'required|numeric|min_length[10]|max_length[10]|is_unique[tblinquiries.ContactNo]',array('is_unique' => 'This Contact Number submitted this form', 'required' => 'Please enter your Contact Number', 'numeric' => 'Please enter your valid Contact Number', 'min_length[10]' => 'Please enter your valid Contact Number', 'max_length[10]' => 'Please enter your valid Contact Number'));
-        $this->form_validation->set_rules('company_name', 'company name', 'required|callback_customAlpha', array('required' => 'Please enter your Company Name'));
-        $this->form_validation->set_rules('designation', 'designation', 'required|callback_customAlpha1', array('required' => 'Please enter your Designation'));
+        $this->form_validation->set_rules('first_name', 'first name', 'required|callback_validFirstname', array('required' => 'Please enter First Name'));
+        $this->form_validation->set_rules('last_name', 'last name', 'required|callback_validLastname', array('required' => 'Please enter Last Name'));
+        $this->form_validation->set_rules('email', 'email address', 'required|valid_email|is_unique[tblinquiries.Email]',array('required' => 'Please enter Email Address','is_unique' => 'This Email Address submitted this form', 'valid_email' => 'Please enter valid Email Address'));
+        $this->form_validation->set_rules('contact', 'contact no.', 'required|callback_validContact|is_unique[tblinquiries.ContactNo]',array('is_unique' => 'This Mobile Number submitted this form', 'required' => 'Please enter Mobile Number'));
+        $this->form_validation->set_rules('company_name', 'company name', 'required|callback_validOrganization', array('required' => 'Please enter Organization Name'));
+        $this->form_validation->set_rules('designation', 'designation', 'required|callback_validDesignation', array('required' => 'Please enter Designation'));
         $this->form_validation->set_message('validate_member','Member is not valid!');
        // $this->form_validation->set_rules('attend', 'attended ATP', 'required');
 
@@ -63,7 +102,7 @@ class InquiryForm extends CI_Controller {
           'Designation'=>$this->input->post('designation'),
           'ContactNo'=>$this->input->post('contact'),
           'AttendedATP'=>$this->input->post('attend'),
-          'Comments'=>$this->input->post('comments')
+          //'Comments'=>$this->input->post('comments')
             );
             //print_r($user);
             if($this->InquiryForm_model->addInquiry($user)){

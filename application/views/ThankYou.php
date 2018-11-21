@@ -23,10 +23,6 @@
 				</div>
           </div>
           <div class="clearfix"></div>
-          <div class="form-btn">
-            <a href="http://www.theopeneyes.com/" target="_blank"><button type="submit" class="lgn_btn"><span>Visit our Website</span></button></a>
-            <!-- <a href="<?php echo base_url().'InquiryForm';?>"><button type="submit" class="lgn_btn"><span>Back to Form</span></button></a>-->
-          </div>
 		  </div>
 		  </div>
           </div>
