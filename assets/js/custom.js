@@ -2,7 +2,7 @@ const body = document.querySelector('body');
 var count = jQuery(window).height() - 156;
 body.style.setProperty('--screen-height', count+"px");
 // Scroll Header
-if (screen.width < 768) {
+/* if (screen.width < 768) {
     var sticky = $('header');
 	sticky.addClass('header_fixed');
 }
@@ -14,7 +14,7 @@ else {
 	  if (scroll >= 200){ sticky.addClass('header_fixed');}
 	  else {sticky.removeClass('header_fixed');}
 	});
-}
+} */
 
 // End Scroll Header
 

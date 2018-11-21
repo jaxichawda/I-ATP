@@ -2,13 +2,25 @@
 <footer>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-sm-6 text-left footer-left">Copyrights &copy; 2018 <a href="http://theopeneyes.com/" target="_blank">OpenEyes Software Solutions Pvt. Ltd</a></div>
-			<div class="col-md-6 col-sm-6 text-right footer-right">
-				<ul class="social_links">
-					<li><a href="https://twitter.com/OpenEyesTech" target="_blank"><i class="flaticon-twitter-logo-silhouette" aria-hidden="true"></i></a></li>
-					<li><a href="https://www.linkedin.com/company/13243146/" target="_blank"><i class="flaticon-linkedin" aria-hidden="true"></i></a></li>
-				</ul>
+		<div class="footer_top">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="header_address">
+					<div class="address"><i class="flaticon-placeholder" aria-hidden="true"></i><span><strong>Suite #405, Iscon Atria 1,</strong><br>Gotri Road, Vadodara 390021</span></div>
+					<div class="address"><i class="flaticon-smartphone" aria-hidden="true"></i><span><strong>Call Us Now</strong><br><a href="tel:+91 265.298.3937">+91 265.298.EYES (3937)</a></span></div>
+					<div class="address"><i class="flaticon-mail" aria-hidden="true"></i><span><strong>Send Us Email</strong><br><a href="mailto:info@theopeneyes.com">info@theopeneyes.com</a></span></div>
+				</div>
 			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="footer_bottom">
+			<div class="col-md-6 col-sm-6 text-left footer-left">Copyrights &copy; 2018 <a href="http://theopeneyes.com/" target="_blank">OpenEyes Software Solutions Pvt. Ltd</a></div>
+				<div class="col-md-6 col-sm-6 text-right footer-right">
+					<ul class="social_links">
+						<li><a href="https://twitter.com/OpenEyesTech" target="_blank"><i class="flaticon-twitter-logo-silhouette" aria-hidden="true"></i></a></li>
+						<li><a href="https://www.linkedin.com/company/13243146/" target="_blank"><i class="flaticon-linkedin" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+		</div>
 		</div>
 	</div>
 </footer>
@@ -39,11 +51,9 @@ setTimeout(function(){
 <script src="assets/js/jquery.dataTables.min.js"></script>
 <script src="assets/js/dataTables.buttons.min.js"></script>
 <script src="assets/js/dataTables.responsive.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.html5.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.print.min.js"></script>
-
-
+<script type="text/javascript" src="assets/js/jszip.min.js"></script>
+<script type="text/javascript" src="assets/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="assets/js/buttons.print.min.js"></script>
 <script src="assets/js/sweetalert2.min.js"></script>
 <!-- End Scripts -->
 

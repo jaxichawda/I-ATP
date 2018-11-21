@@ -75,26 +75,24 @@
 <?php include("footer.php"); ?>
 <script type="text/javascript">
 	$(document).ready(function() {
-	$('#dataTables-example').dataTable({
-	responsive: {
-	details: {
-	display: $.fn.dataTable.Responsive.display.childRowImmediate,
-	type: ''
-	}
-	},
-	scrollCollapse: true,   
-	dom: 'Bfrtip',
-	buttons: [
-	{
-	extend: 'excel',
-	title: 'Inquiry List',
-	exportOptions: {
-	columns: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
-	}
-	},
-	]
-	} );
-	$('.buttons-excel').attr('data-original-title', 'Export').tooltip();
-	$('#dataTables-example_filter input').addClass('input-sm');
-	} );
+    $('#dataTables-example').dataTable({
+        responsive: {
+            details: {
+                display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                type: ''
+            }
+        },
+        scrollCollapse: true,
+        dom: 'Bfrtip',
+        buttons: [{
+            extend: 'excel',
+            title: 'Inquiry List',
+            exportOptions: {
+                columns: [0, 1, 2, 3, 4, 5, 6, 7]
+            }
+        }]
+    });
+    $('.buttons-excel').attr('data-original-title', 'Export').tooltip();
+    $('#dataTables-example_filter input').addClass('input-sm');
+});
 </script>
