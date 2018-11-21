@@ -21,11 +21,11 @@
 							<th>Sr No.</th>
 							<th>Name</th>
 							<th>Email</th>
-							<th>Contact No.</th>
-							<th>Company Name</th>
+							<th>Mobile No.</th>
+							<th>Organization Name</th>
 							<th>Designation</th>
 							<th>Attended ATP</th>
-							<th>Comments</th>
+							<!-- <th>Comments</th> -->
 							</tr>
 							</thead>
 							<tbody>
@@ -43,7 +43,9 @@
 							<td><?php echo $row->CompanyName;?></td>  
 							<td><?php echo $row->Designation;?></td>  
 							<td><?php echo $row->AttendedATP;?></td>  
-							<td><?php if($row->Comments != null){echo $row->Comments;}else{echo "No Comments";}?></td>  
+							<!-- <td> -->
+							<?php //if($row->Comments != null){echo $row->Comments;}else{echo "No Comments";}?>
+							<!-- </td>   --> 
 							</tr>  
 							<?php }  
 							if($h->result()==null){
@@ -86,9 +88,9 @@
         dom: 'Bfrtip',
         buttons: [{
             extend: 'excel',
-            title: 'Inquiry List',
+            title: 'I-ATP 2018 Attendees List',
             exportOptions: {
-                columns: [0, 1, 2, 3, 4, 5, 6, 7]
+                columns: [0, 1, 2, 3, 4, 5, 6]
             }
         }]
     });
