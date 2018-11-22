@@ -30,6 +30,12 @@
       </div>
 </div>
 <div class="clearfix"></div>
+<script>
+        var timer = setTimeout(function() {
+          location.href = '<?php echo $this->config->base_url(); ?>';  
+          //window.location=''
+        }, 7000);
+    </script>
 <!-- End Inner Section --> 
 
 <?php include("footer.php"); ?>

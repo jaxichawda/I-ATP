@@ -11,7 +11,8 @@ class InquiryForm extends CI_Controller {
     }
 	public function index()
 	{
-		$this->load->view('InquiryForm');
+        $data['country'] = $this->InquiryForm_model->getCountry();
+        $this->load->view('InquiryForm',$data);
     }
     public function validFirstname($str) 
     {
@@ -101,6 +102,7 @@ class InquiryForm extends CI_Controller {
           'CompanyName'=>$this->input->post('company_name'),
           'Designation'=>$this->input->post('designation'),
           'ContactNo'=>$this->input->post('contact'),
+          'StateId'=>$this->input->post('state'),
           'AttendedATP'=>$this->input->post('attend'),
           //'Comments'=>$this->input->post('comments')
             );
@@ -122,6 +124,12 @@ class InquiryForm extends CI_Controller {
         }
         echo json_encode($data);
     }
+    public function getState()
+    {
+        $countryid = $this->input->post('CountryId');
+        $value['state'] = $this->InquiryForm_model->getState($countryid);
+        echo json_encode($value);
+ }
     
 }
 ?>

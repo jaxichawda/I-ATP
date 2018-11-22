@@ -71,9 +71,32 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="col-md-2 col-sm-3">
+                                    <label class="pull-right mt-5">Country</label>
+                                </div>
+                                <div class="col-md-4 col-sm-9">
+                                    <div class="form-group">
+                                    <select id="selectlist" class="form-control" name="country" onChange="getState(this.value);" required>
+                                    <option>Select Country</option>
+                                        <?php foreach($country as $row){ ?>
+                                        <option value="<?php echo $row->CountryId; ?>" <?php if($row->CountryName=='India') echo 'selected = "selected"'; ?> > <?php echo $row->CountryName; ?></option>';
+                                        <?php } ?>	
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-3">
+                                    <label class="pull-right mt-5">State</label>
+                                </div>
+                                <div class="col-md-4 col-sm-9">
+                                    <div class="form-group">
+                                    <select id="statelist" class="form-control" name="state">
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-md-2 col-sm-3">
                                     <label class="pull-right atp_title mt-5" style="text-align:right;"><span class="error_span">*</span> Attending ATP for: </label>
                                 </div>
-                                <div class="col-md-10 col-sm-9">
+                                <div class="col-md-4 col-sm-9">
                                     <div class="form-group">
                                         <div class="radio_box">
                                             <input type="radio" name="attend" value="First time" id="Firsttime" />
@@ -88,7 +111,6 @@
                                     </div>
                                     <span id="radio_error"></span>
                                 </div>
-                               
                                 <!-- <div class="col-md-2 col-sm-3">
                                     <label class="pull-right mt-5">Comments</label>
                                 </div>
@@ -120,12 +142,17 @@
 
 <?php include("footer.php"); ?>
 <script>
+$(document).ready(function(){
+    var selectedCountry = $("#selectlist").children("option:selected").val();
+    getState(selectedCountry);
+});
+
 $('#form-user').submit(function(e){
 	e.preventDefault();
      $('.error_span').remove();
     //$('#radio_error').remove();
     if ($('input[name="attend"]:checked').length == 0) {
-         $('#radio_error').text("Please select one option");
+         $('#radio_error').text("Please select any one option");
          $('#radio_error').addClass('error_span_radio');
     } else {
         $('#radio_error').remove();
@@ -187,4 +214,24 @@ $('#form-user').submit(function(e){
 		}
 	});
 });
+
+function getState(value)
+{
+    $.ajax({
+	type: "POST",
+	dataType: "json",
+	data : {"CountryId" : value},
+	url: "<?php echo base_url(); ?>"+"InquiryForm/getState",
+		success: function(data) {
+		if (data)
+		{
+			var listItems= "";
+			for (var i = 0; i < data.state.length; i++){
+				listItems += '<option value="' + data.state[i].StateId + '">' + data.state[i].StateName + '</option>';
+			}
+			$('#statelist').html(listItems); 
+		}
+	}
+	});
+}
 </script>

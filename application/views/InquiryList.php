@@ -24,6 +24,7 @@
 							<th>Mobile No.</th>
 							<th>Organization Name</th>
 							<th>Designation</th>
+							<th>State</th>
 							<th>Attended ATP</th>
 							<!-- <th>Comments</th> -->
 							</tr>
@@ -41,7 +42,8 @@
 							<td><?php echo $row->Email;?></td>  
 							<td><?php echo $row->ContactNo;?></td>  
 							<td><?php echo $row->CompanyName;?></td>  
-							<td><?php echo $row->Designation;?></td>  
+							<td><?php echo $row->Designation;?></td>
+							<td><?php echo $row->StateName." - ".$row->CountryAbbreviation;?></td>
 							<td><?php echo $row->AttendedATP;?></td>  
 							<!-- <td> -->
 							<?php //if($row->Comments != null){echo $row->Comments;}else{echo "No Comments";}?>
@@ -90,7 +92,7 @@
             extend: 'excel',
             title: 'I-ATP 2018 Attendees List',
             exportOptions: {
-                columns: [0, 1, 2, 3, 4, 5, 6]
+                columns: [0, 1, 2, 3, 4, 5, 6, 7]
             }
         }]
     });
