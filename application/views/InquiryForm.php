@@ -14,7 +14,7 @@
                     <div class="col-md-12 col-sm-12 col-xs-12">
 						   <div class="content-area">
 	   <div id="main">
-	   <h1 class="text-center">Your Information</h1>
+	   <h2 class="text-center">Please provide your information</h2>
 		<div class="separator text-center"><span class="dott"></span><span class="dott"></span><span class="dott"></span></div>
                         <div class="clearfix"></div>
                         <?php echo form_open("InquiryForm/addInquiry",array("class"=>"form-validate","id"=>"form-user")); ?>
@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-sm-3">
-                                    <label class="pull-right mt-5"><span class="error_span">*</span> Contact Number</label>
+                                    <label class="pull-right mt-5"><span class="error_span">*</span> Mobile Number</label>
                                 </div>
                                 <div class="col-md-4 col-sm-9">
                                     <div class="form-group">
@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="col-md-2 col-sm-3">
-                                    <label class="pull-right mt-5"><span class="error_span">*</span> Company Name</label>
+                                    <label class="pull-right mt-5"><span class="error_span">*</span> Organization Name</label>
                                 </div>
                                 <div class="col-md-4 col-sm-9">
                                     <div class="form-group">
@@ -71,32 +71,54 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="col-md-2 col-sm-3">
-                                    <label class="pull-right atp_title mt-5" style="text-align:right;"><span class="error_span">*</span> How many times attended ATP event previously?</label>
+                                    <label class="pull-right mt-5">Country</label>
+                                </div>
+                                <div class="col-md-4 col-sm-9">
+                                    <div class="form-group">
+                                    <select id="selectlist" class="form-control" name="country" onChange="getState(this.value);" required>
+                                    <option>Select Country</option>
+                                        <?php foreach($country as $row){ ?>
+                                        <option value="<?php echo $row->CountryId; ?>" <?php if($row->CountryName=='India') echo 'selected = "selected"'; ?> > <?php echo $row->CountryName; ?></option>';
+                                        <?php } ?>	
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-3">
+                                    <label class="pull-right mt-5">State</label>
+                                </div>
+                                <div class="col-md-4 col-sm-9">
+                                    <div class="form-group">
+                                    <select id="statelist" class="form-control" name="state">
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-md-2 col-sm-3">
+                                    <label class="pull-right atp_title mt-5" style="text-align:right;"><span class="error_span">*</span> Attending ATP for: </label>
                                 </div>
                                 <div class="col-md-4 col-sm-9">
                                     <div class="form-group">
                                         <div class="radio_box">
-                                            <input type="radio" name="attend" value="Once" id="Once" />
-                                            <label for="Once">Once</label> 
-                                            <input type="radio" name="attend" value="Twice" id="Twice"/>
-                                            <label for="Twice">Twice</label> 
-                                            <input type="radio" name="attend" value="More" id="More"/>
-                                            <label for="More">More</label>
-                                            <input type="radio" name="attend" value="Never" id="Never" />
-                                            <label for="Never">Never</label>
+                                            <input type="radio" name="attend" value="First time" id="Firsttime" />
+                                            <label for="Firsttime">First time</label> 
+                                            <input type="radio" name="attend" value="Second time" id="Secondtime"/>
+                                            <label for="Secondtime">Second time</label> 
+                                            <input type="radio" name="attend" value="Third time" id="Thirdtime"/>
+                                            <label for="Thirdtime">Third time</label>
+                                            <input type="radio" name="attend" value="I lost count" id="Ilostcount" />
+                                            <label for="Ilostcount">I lost count</label>
                                         </div>
                                     </div>
                                     <span id="radio_error"></span>
                                 </div>
-                               
-                                <div class="col-md-2 col-sm-3">
+                                <!-- <div class="col-md-2 col-sm-3">
                                     <label class="pull-right mt-5">Comments</label>
                                 </div>
                                 <div class="col-md-4 col-sm-9">
                                     <div class="form-group">
                                         <textarea class="form-control" name="comments" id="comments" maxlength="500"></textarea>
                                     </div>
-                                </div>
+                                </div> -->
                                 
                                 <div class="clearfix"></div>
                             </div>
@@ -104,7 +126,7 @@
                             <div class="clearfix"></div>
                             <div class="col-md-12">
                                 <div class="form-btn">
-                                    <button type="submit" class="lgn_btn margin_top" id="btn"><span>Stay connected</span></button><img src="<?php echo base_url();?>assets/images/loader.gif" id="loader" width="30px" height="auto" style="margin-left:15px;display:none;">
+                                    <button type="submit" class="lgn_btn margin_top" id="btn"><span>Submit</span></button><img src="<?php echo base_url();?>assets/images/loader.gif" id="loader" width="30px" height="auto" style="margin-left:15px;display:none;">
                                 </div>
                             </div>
                             <?php echo form_close();?>
@@ -120,12 +142,17 @@
 
 <?php include("footer.php"); ?>
 <script>
+$(document).ready(function(){
+    var selectedCountry = $("#selectlist").children("option:selected").val();
+    getState(selectedCountry);
+});
+
 $('#form-user').submit(function(e){
 	e.preventDefault();
      $('.error_span').remove();
     //$('#radio_error').remove();
     if ($('input[name="attend"]:checked').length == 0) {
-         $('#radio_error').text("Please select one option");
+         $('#radio_error').text("Please select any one option");
          $('#radio_error').addClass('error_span_radio');
     } else {
         $('#radio_error').remove();
@@ -162,7 +189,19 @@ $('#form-user').submit(function(e){
 			else if(response.success == 2){ 
 				$('#btn').prop('disabled', false);
 				$('#loader').hide(); 
-				$('#error').html(response.message);
+                setTimeout(function() {
+							swal({
+                                title: "Something went wrong!! ",
+                                text: "Please try again.",
+								type: "warning",
+                                showConfirmButton: true,
+                                confirmButtonClass: "btn-danger",
+                                confirmButtonText: "Ok",
+                                closeOnConfirm: true
+							}, function() {
+								window.location = "";
+							});
+						}, 0);
 			}
 			else{
 				$('#btn').prop('disabled', false);
@@ -175,4 +214,24 @@ $('#form-user').submit(function(e){
 		}
 	});
 });
+
+function getState(value)
+{
+    $.ajax({
+	type: "POST",
+	dataType: "json",
+	data : {"CountryId" : value},
+	url: "<?php echo base_url(); ?>"+"InquiryForm/getState",
+		success: function(data) {
+		if (data)
+		{
+			var listItems= "";
+			for (var i = 0; i < data.state.length; i++){
+				listItems += '<option value="' + data.state[i].StateId + '">' + data.state[i].StateName + '</option>';
+			}
+			$('#statelist').html(listItems); 
+		}
+	}
+	});
+}
 </script>

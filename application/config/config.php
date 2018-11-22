@@ -23,8 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-//$config['base_url'] = 'http://localhost/I-ATP/';
-$config['base_url'] = 'http://localhost:8080/I-ATP/';
+ $config['base_url'] = 'http://localhost/I-ATP/';
 // $config['base_url'] = 'http://iatp.devbyopeneyes.com/';
 // $config['base_url'] = 'http://iatp.uatbyopeneyes.com/';
 // $config['base_url'] = 'http://iatp.uatbyopeneyes.com/';
