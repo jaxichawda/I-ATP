@@ -14,7 +14,7 @@
                     <div class="col-md-12 col-sm-12 col-xs-12">
 						   <div class="content-area">
 	   <div id="main">
-	   <h2 class="text-center">Please provide your information</h2>
+	   <h1 class="text-center">Please provide your information</h1>
 		<div class="separator text-center"><span class="dott"></span><span class="dott"></span><span class="dott"></span></div>
                         <div class="clearfix"></div>
                         <?php echo form_open("InquiryForm/addInquiry",array("class"=>"form-validate","id"=>"form-user")); ?>

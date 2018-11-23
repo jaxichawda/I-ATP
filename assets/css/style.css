@@ -13,8 +13,9 @@ a:hover, a.selected {text-decoration:none; color:#0085AD;}
 a:focus{outline:none;}
 ul {list-style:none; padding: 0; margin: 0;}
 li {list-style:none;}
-h1{font-size: 35px;line-height: 35px;font-weight: 300;margin: 0 0 15px 0;color: #222;font-family: 'Titillium Web', sans-serif;text-transform: uppercase;}
+h1{font-size: 24px;line-height: 35px;font-weight: 300;margin: 0 0 15px 0;color: #222;font-family: 'Titillium Web', sans-serif;text-transform: uppercase;}
 .mt-5{margin-top: 5px;}
+label {font-weight: 500;color: #111111;font-size: 16px;}
 /* label{margin-top: 5px;float:right}  */
 /* ========== Do Not Touch In Css End ========== */
 
@@ -23,8 +24,8 @@ h1{font-size: 35px;line-height: 35px;font-weight: 300;margin: 0 0 15px 0;color: 
 header{ position: relative; z-index: 999; width: 100%; padding:0px 0;transition: all 0.3s ease-in 0s;}
 .social_links{display: inline-block;}
 .social_links li{display: inline-block; color: #fff; font-size: 14px; padding: 0 7px;}
-.social_links li a{color: #888888;}
-.social_links li a:hover{color: #0061AF;}
+.social_links li a{color: #fff;}
+.social_links li a:hover{color: #ccc;}
 header .logo a{display:inline-block; width:90px; padding: 6px 0 0;}
 header .header_address{float: right; padding: 30px 0 22px 0;}
 header .header_address .address,footer .header_address .address{ display: inline-block; position: relative; border-right: 1px solid #ddd; padding: 0 35px 0 0; margin: 0 35px 0 0;}
@@ -105,7 +106,7 @@ textarea{height:150px; resize:none;}
 .next_btn:hover,.next_btn:focus{background-position: right bottom; color: #ffffff; }
 input[type="radio"] { visibility:hidden; position:absolute;}
 .radio_box {display:inline-block; margin:5px 20px 0 0;}
-.radio_box label{ background:url(../images/radio.png) left center no-repeat; font-weight:normal; font-size: 15px; font-family: 'Titillium Web', sans-serif; background-size:15px; padding:5px 5px 5px 20px; text-align:center; display:inline-block; vertical-align:top; margin:0; cursor:pointer; color:#000;}
+.radio_box label{ background:url(../images/radio.png) left center no-repeat; font-weight:normal; font-size: 15px; font-family: 'Titillium Web', sans-serif; background-size:15px;padding: 5px 5px 5px 22px;display:inline-block; vertical-align:top; margin:0; cursor:pointer; color:#000;width:33.33%;}
 .radio_box input[type="radio"]:checked + label{background:url(../images/radio_checked.png) left center no-repeat; background-size:15px; color:#007699;}
 input[type="checkbox"] { visibility:hidden; position:absolute;}
 .check_box {display:block; margin:5px 20px 0 0;}
@@ -115,7 +116,7 @@ input[type="checkbox"] { visibility:hidden; position:absolute;}
 .inner_content .inner_block:hover{border-color: #0061AF;box-shadow: 0 0 0 1px #0061AF;}
 .read_more{margin-top:10px;padding:9px 15px 10px 15px; font-size: 16px; display: inline-block; line-height: 16px; position: relative; background: transparent; border:2px solid #fff; color: #fff; transition:all 0.3s ease-in 0s; min-width: 100px; text-align: center; font-weight: 500; border-radius:15px;}
 .separator { position: relative; height: 15px; width: 100px; margin: 0 0 15px; text-align: center;}
-.separator.text-center{margin: 0 auto 15px;}
+.separator.text-center{margin: 0 auto 20px;}
 .separator .dott { position: relative; width: 6px; height: 6px; top: -6px; border-radius: 50%; display: inline-block; background: #0061af; margin: 0 3px;}
 .separator:before { position: absolute; content: ''; left: 0px; top: 6px; width: 20px; height: 1px; background: #0061af;}
 .separator:after { position: absolute; content: ''; right: 0px; top: 6px; width: 20px; height: 1px; background: #0061af;}
@@ -144,13 +145,21 @@ input[type="checkbox"] { visibility:hidden; position:absolute;}
 
 /* ------- Footer ------- */
 footer.footer_fixed{position: fixed; bottom: 0; left: 0;z-index:100;}
-footer{ background:#f2f2f2; padding:14px 0; font-size:15px; font-weight: 400; line-height: 15px; width:100%; color:#111111; border-top:10px solid #a6ce39; }
+footer{padding:0px 0; font-size:15px; font-weight: 400; line-height: 15px; width:100%; color:#fff;border-top: 2px solid #d6d6d6; }
 .go_top { position:fixed; bottom: 50px; right:20px; padding:0px; display:none; cursor: pointer; z-index: 999; height: 45px; width: 45px; text-align: center; background: rgba(0,0,0,0.5); color: #fff; font-size: 25px; line-height: 45px; border-radius: 5px; transition: all .3s ease-in-out;}
 .go_top:hover{background: rgba(0,0,0,0.8); transition: all .3s ease-in-out;}
 footer.register_footer{ border:none;background:none; padding:10px; font-size:12px; font-weight: normal; line-height: 20px; color:#fff; position: relative; bottom:0; right: 0; z-index: 999; transition:all 0.4s ease 0s; width: 100%;}
 footer.register_footer a{color:#fff; }
 footer.register_footer a:hover{color:#111; }
 #colorPickerFrameCanvas{display:none!important;}
+.footer_bottom a{color:#fff;}
+.footer_address ul li{display:inline-block;border-right:1px solid #fff;margin-right: 10px;padding-right: 10px;}
+.footer_address ul li:last-child{border-right:none;}
+.footer_address{ background:#2678ba; text-align:center;padding: 10px 0px;}
+.footer_contact .partner{background: #fff;padding: 10px;margin-top: -1px;}
+.footer_contact .partner img{width:165px;margin:0 auto;height:auto;}
+.footer_contact	.cntcticons{background:#b1cb28;margin-top: -1px;padding: 10px 0px;text-align: center;}
+.footer_contact	.cntcticons img{display: inline-block;vertical-align: middle;width: 30px;height: 30px;margin-right: 5px;}
 /* ------- End Footer ------- */
 
 /*-------------Inner Banner----------------------*/
@@ -186,6 +195,9 @@ table.dataTable.no-footer {border-bottom: 0px!important;}
 .file_upload input[type="text"]{background:url(../images/upload.png) 98% center no-repeat; background-size:20px;}
 .file_upload input[type="file"]{opacity: 0; position: absolute; left: 0; top: 22px; z-index: 99; width: 100%; cursor: pointer;}
 .inner_content .addpage_backbtn{position: absolute;right: 15px;top:-9px;}
+.content-area form{background: #fff;padding: 25px 0px;border: 3px solid #0955a4;}
+.content-area form .form-control,.content-area form select.form-control{transition: all 0.2s linear 0s;border: 1px solid #000000!important;border-radius: 0px!important;box-shadow: none!important;}
+.content-area form .form-control:hover,.content-area form .form-control:focus	{border: 2px solid #0954a4!important;border-left: 4px solid #2678ba!important;}
 /*----------- end admin css ------------*/
 
 @media (min-width:2000px){	
@@ -217,11 +229,22 @@ table.dataTable.no-footer {border-bottom: 0px!important;}
 	header .header_address .address ,footer .header_address .address{padding: 0 5px 0 0;margin: 0 5px 0 0;}		
 	footer .footer-left{font-size:13px;}
 	.container {max-width: 100%;}
-	label{font-size:12px;}
+	label{font-size:13px!important;}
+	header .logo a{width:55px;margin: 0px -10px;}
+	.footer_contact .cntcticons p{font-size:14px;}
+	header .header_address{padding: 15px 0 0px 0px;float: none;text-align: center;}
+	.radio_box label{width:auto;}
 	.inner_content label.atp_title,.inner_content label.pull-right{text-align:left!important;float: left !important;}	
 }
-@media (min-width:768px) and (max-width:1024px){
+@media (min-width:768px) and (max-width:1080px){
 	.inner_banner .innerbanner_text{padding:8% 0 0 0;}
+	header .logo a{width:55px;margin: 0px -10px;}
+	.footer_contact .cntcticons p{font-size:14px;}
+	header .header_address{padding: 15px 0 0px 0px;float: none;text-align: center;}
+	label{font-size:13px!important;}
+	.radio_box label{width:auto;}
+	header .header_address .address span, header .header_address .address span strong,footer .header_address .address span, footer .header_address .address span strong {font-size: 13px;}
+	header .header_address .address ,footer .header_address .address{padding: 0 5px 0 0;margin: 0 5px 0 0;}		
 }
 @media (max-width:767px){
     /* header .header_address,header .social_links{display: none;} */
@@ -230,6 +253,8 @@ table.dataTable.no-footer {border-bottom: 0px!important;}
 	footer .social_links{margin-top: 10px;}
 	#page-wrapper .panel-default label{float:none;}
 	label{float:left;}
+	header .logo a{width:75px!important;}
+	.radio_box label{width:auto;}
 	h1{font-size:22px;}
 	header .logo a{width:110px;}
 	footer{line-height:35px;}
