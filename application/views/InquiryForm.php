@@ -76,7 +76,6 @@
                                 <div class="col-md-4 col-sm-9">
                                     <div class="form-group">
                                     <select id="selectlist" class="form-control" name="country" onChange="getState(this.value);" required>
-                                    <option>Select Country</option>
                                         <?php foreach($country as $row){ ?>
                                         <option value="<?php echo $row->CountryId; ?>" <?php if($row->CountryName=='India') echo 'selected = "selected"'; ?> > <?php echo $row->CountryName; ?></option>';
                                         <?php } ?>	
