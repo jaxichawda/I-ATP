@@ -25,7 +25,7 @@
 	<div class="container">
 		<div class="row">
 			<!-- Logo -->
-			<div class="col-md-1 col-sm-1 col-xs-6">
+			<div class="col-md-1 col-sm-1 col-xs-6 left_logo">
 				<div class="logo"> <a href="http://theopeneyes.com/" target="_blank"><img src="assets/images/OSSlogo.png" alt="OpenEyes Software Solutions" title="OpenEyes Software Solutions" class="img-responsive tooltip_inline" data-placement="bottom" /></a> </div>
 			</div>
 			<!-- End Logo -->
@@ -39,7 +39,7 @@
 				</div>
 			</div>
 			<!-- End Header Address -->
-			<div class="col-md-1 col-sm-1 col-xs-6">
+			<div class="col-md-1 col-sm-1 col-xs-6 right-logo">
 				<div class="logo"><a href="#"><img src="assets/images/atp_india_logo.png" alt="I-ATP" title="Association of Test Publishers" class="img-responsive tooltip_inline" data-placement="bottom" /></a> </div>
 			</div>
 		</div>

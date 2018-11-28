@@ -243,7 +243,7 @@ table.dataTable.no-footer {border-bottom: 0px!important;}
 	header .header_address{padding: 15px 0 0px 0px;float: none;text-align: center;}
 	label{font-size:13px!important;}
 	.radio_box label{width:auto;}
-	header .header_address .address span, header .header_address .address span strong,footer .header_address .address span, footer .header_address .address span strong {font-size: 13px;}
+	header .header_address .address span, header .header_address .address span strong,footer .header_address .address span, footer .header_address .address span strong {text-align: left;font-size: 13px;}
 	header .header_address .address ,footer .header_address .address{padding: 0 5px 0 0;margin: 0 5px 0 0;}		
 }
 @media (max-width:767px){
@@ -258,11 +258,13 @@ table.dataTable.no-footer {border-bottom: 0px!important;}
 	h1{font-size:22px;}
 	header .logo a{width:110px;}
 	footer{line-height:35px;}
+	header .left_logo .logo{text-align:left;}
+	header .right-logo .logo{text-align:right;}
 	footer.footer_fixed{position:relative;}
 	header .logo{text-align:center;}
 	header .header_address{display:none;}
 	footer .footer_top .header_address{display:block;border-bottom: 1px solid #ddd;}
-	footer .footer_top{padding: 15px 0px;text-align:center;}
+	footer .footer_top{padding: 15px 0px 1px 0px;text-align:center;}
 	table.dataTable > tbody > tr.child ul.dtr-details{width:100%;}
 	header .header_address {padding: 15px 0 15px 0;font-size: 12px;text-align: center;float:none;}
 	header .header_address .address,footer .header_address .address {padding: 0 10px 0 0;margin: 0 10px 0 0;}
@@ -274,6 +276,7 @@ table.dataTable.no-footer {border-bottom: 0px!important;}
 	.table-list #page-wrapper{padding: 25px 0;height: auto;display:block;position: relative;width: 100%;}
 }
 @media (max-width:768px){	
+header .header_address{text-align:left;}
 	.inner_content .inner_block .que_img{margin: -26px auto 0px auto;display: table;}
 	.inner_content .inner_block .que_img span{display: table-cell;position:relative;top:0;left:0;}
 	.separator.text-center {margin: 0 auto 35px;}
