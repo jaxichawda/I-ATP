@@ -19,7 +19,7 @@
 		<div class="separator text-center"><span class="dott"></span><span class="dott"></span><span class="dott"></span></div>-->
           <div class="thankyou_block">
 				<div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
-					<h3>Thank you!</h3>
+					<h3>Thank you for sharing your information!</h3>
 				</div>
           </div>
           <div class="clearfix"></div>

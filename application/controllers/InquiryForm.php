@@ -17,7 +17,7 @@ class InquiryForm extends CI_Controller {
     public function validFirstname($str) 
     {
         if($str!=null){
-        if ( !preg_match("/^[a-zA-Z-'.&\s]{2,}+$/i",$str) )
+        if ( !preg_match("/^[a-zA-Z-'.,&\s]{2,}+$/i",$str) )
         {
             $this->form_validation->set_message('validFirstname','Please enter valid First Name');
             return false;
@@ -30,7 +30,7 @@ class InquiryForm extends CI_Controller {
     public function validLastname($str) 
     {
         if($str!=null){
-        if ( !preg_match("/^[a-zA-Z-'.&\s]{2,}+$/i",$str) )
+        if ( !preg_match("/^[a-zA-Z-'.,&\s]{2,}+$/i",$str) )
         {
             $this->form_validation->set_message('validLastname','Please enter valid Last Name');
             return false;
@@ -56,7 +56,7 @@ class InquiryForm extends CI_Controller {
     public function validOrganization($str) 
     {
         if($str!=null){
-        if ( !preg_match("/^[a-zA-Z-'.&\s]{2,}+$/i",$str) )
+        if ( !preg_match("/^[a-zA-Z-'.,&\s]{2,}+$/i",$str) )
         {
             $this->form_validation->set_message('validOrganization','Please enter valid Organization Name');
             return false;
@@ -69,7 +69,7 @@ class InquiryForm extends CI_Controller {
     public function validDesignation($str) 
     {
         if($str!=null){
-        if ( !preg_match("/^[a-zA-Z-'.&\s]{2,}+$/i",$str) )
+        if ( !preg_match("/^[a-zA-Z-'.,&\s]{2,}+$/i",$str) )
         {
             $this->form_validation->set_message('validDesignation','Please enter valid Designation');
             return false;
