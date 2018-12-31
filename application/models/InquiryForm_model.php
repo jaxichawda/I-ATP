@@ -73,7 +73,7 @@ class InquiryForm_model extends CI_model{
             $config['smtp_host'] = 'ssl://smtp.googlemail.com';
             $config['smtp_port'] = '465';
             $config['smtp_user'] = 'myopeneyes3937@gmail.com';
-            $config['smtp_pass'] = 'W3lc0m3@2018';  //sender's password
+            $config['smtp_pass'] = 'W3lc0m3@2019';  //sender's password
             $config['mailtype'] = 'html';
             $config['charset'] = 'iso-8859-1';
             $config['newline']="\r\n";
